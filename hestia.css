@@ -1,0 +1,273 @@
+/* Style General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+html, body {height: 100%;}
+body {
+    background-color: #e0e0e0;
+}
+:root {
+    --pink: #E91E63;
+    --lightBlack: #3C4858;
+    --lightGrey: #999999;
+    --purple: #89229B;
+    --celeste: #00BCD4;
+    --lightRed: #F44336;
+}
+
+
+
+
+/* Style Parents */
+.conteinerAll {
+    width: 100%;
+    position: relative;
+}
+
+.section {
+    width: 94vw;
+    border-radius: 5px;
+    box-shadow: 0 0 27px #00000098;
+    padding: 4.5rem 0 0 0;
+    color: #fff;
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 80vh;
+}
+
+.header {
+    width: 100%;
+    border-radius: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.header, .footer{
+    padding: 2em 8em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main {
+    width: 100%;
+    height: 90vh;
+    background-image: url(https://images.unsplash.com/photo-1520008457705-fbebb2fe6565?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    row-gap: 2em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourFocus, .blog {
+    padding: 0px 5em 5em 5em;
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 4em;
+    column-gap: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+.aboutHestia, .address{
+    padding: 4em;
+    background-image: url(https://images.unsplash.com/photo-1498856878645-934f9b6597dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.blog {
+    padding: 8em 5em;
+    column-gap: 40px;
+}
+
+.address {
+    background-attachment: unset;
+    padding: 7.5em 4em;
+    flex-direction: column;
+    row-gap: 2em;
+    align-items: flex-start;
+}
+.footer {background-color: #323437; padding: 4em 8em;}
+
+
+
+
+
+
+/* Style Children */
+.header__p, .header__nav-a, 
+.header__nav-more, .main__button,
+.blog__a, .blog__h5, .blog__p span {
+    cursor: pointer;
+}
+.header__p, .aboutHestia__text-p{
+    font-size: 18px;
+    font-weight: 300;
+}
+.header__nav-a, .header__nav-more {
+    margin-left: 5px;
+    padding: 15px;
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+}
+.header__nav-more {
+    padding: 18px 25px;
+    background-color: var(--pink);
+    border-radius: 40px;
+}
+.header__nav-more:hover,
+.main__button:hover {
+    box-shadow: 0 7px 17px #e91e6250;
+}
+.header__nav-more:hover{
+    color: #ffd5e3;
+}
+.header__nav-a:before {
+    content: "";
+    width: 0;
+    height: 100%;
+    border-radius: 3px 0 0 3px;
+    background-color: #ffffff1e;
+
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+}
+.header__nav-a:after {
+    content: "";
+    width: 0;
+    height: 100%;
+    border-radius: 0 3px 3px 0;
+    background-color: #ffffff1c;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+}
+.header__nav-a:hover::after,
+.header__nav-a:hover::before {
+    width: 50%;
+    transition: width .3s;
+}
+
+
+
+.main__h1 {
+    font-size: 4.1875em;
+    font-weight: 700;
+}
+.main__p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+}
+.main__button {
+    margin-top: 4em;
+    padding: 15px 35px;
+    background-color: var(--pink);
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.ourFocus__h2, .blog__h2 {
+    width: 100%;
+}
+
+.ourFocus__h2, .blog__h2, .address__h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 37px;
+    font-weight: 800 !important;
+    color: var(--lightBlack);
+    text-align: center;
+}
+.widgets, .blog__div {
+    width: 25%;
+    flex-grow: 2;
+    text-align: center;
+}
+.widgets>* {
+    margin-bottom: 18px;
+}
+.widgets__h5, .blog__h5, .address__h5 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: var(--lightBlack);
+}
+.widgets__p, .blog__p, .address__p, .footer__p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--lightGrey);
+    overflow-wrap: break-word;
+}
+
+
+
+.aboutHestia__text-h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 37px;
+    font-weight: 800;
+    line-height: 2;
+}
+.aboutHestia__img {
+    width: 45%;
+}
+
+
+.blog__div {
+    text-align: left;
+}
+.blog__h5 {
+    line-height: 3;
+    transition: color .4s;
+}
+.blog__h5:hover {color: #3c4858af;}
+.blog__p span {color: #23527c;}
+.blog__a, .footer__nav-a{
+    font-size: 12px;
+    font-weight: 500;
+    transition: color .4s;
+}
+.a1 {
+    color: var(--purple);
+}
+.a1:hover {color: rgb(137, 34, 155, .8);}
+.a2 {
+    color: var(--celeste);
+}
+.a2:hover {color: rgb(0, 188, 212, .8);}
+.a3 {
+    color: var(--lightRed);
+}
+.a3:hover {color: rgb(244, 67, 54, .8);}
+
+/* --purple: #89229B;
+    --celeste: #00BCD4;
+    --lightRed: #F44336; */
+
+.address__h3, .address__h5, .address__p, .footer__nav-a, .footer__p, .main {color: #fff;}
+
+.footer__nav-a {padding: 15px;}
