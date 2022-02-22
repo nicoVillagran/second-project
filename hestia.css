@@ -43,17 +43,20 @@ body {
 
 .header {
     width: 100%;
-    border-radius: 5px;
+
     position: fixed;
     top: 0;
     left: 0;
     z-index: 3;
+
+    transition: all .6s;
 }
 
 .header, .footer{
     padding: 2em 8em;
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -109,7 +112,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-.footer {background-color: #323437; padding: 4em 8em;}
+.footer {
+    background-color: #323437; 
+    padding: 4em 8em;
+    /* row-gap: 3rem; */
+    gap: 3rem;
+    justify-content: space-around;
+}
 
 
 
@@ -119,20 +128,29 @@ body {
 /* Style Children */
 .header__p, .header__nav-a, 
 .header__nav-more, .main__button,
-.blog__a, .blog__h5, .blog__p span {
+.blog__a, .blog__h5, .blog__p span, 
+.header__button {
     cursor: pointer;
+}
+.header__button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 30px;
+    display: none;
 }
 .header__p, .aboutHestia__text-p{
     font-size: 18px;
     font-weight: 300;
 }
-.header__nav-a, .header__nav-more {
+.header__nav-a, .header__nav-more, .headerScroll__a {
     margin-left: 5px;
     padding: 15px;
     color: #fff;
     font-size: 12px;
     position: relative;
 }
+.headerScroll__a {color: #323437;}
+.headerScroll__a:hover {color: var(--pink);}
 .header__nav-more {
     padding: 18px 25px;
     background-color: var(--pink);
@@ -290,8 +308,15 @@ body {
 
 
 /* --------------------------------------------------------------------------------------------------------- MD Queries */
-@media screen and (max-width: 900px){
-    body {background-color: #000;}
-    .header__nav {display: none;}
-    /* .header__menu {display: inline-block;} */
+@media screen and (max-width: 900px){ 
+    .header {padding: 2rem 5rem;}
+    .header__nav, .main__p {display: none;}
+    .header__button {display: inline-block;}
+    .main {row-gap: 0;}
+    .main__h1 {text-align: center;}
+    .main__button {margin: 0;}
 }
+
+/* @media screen and (max-width: 750px) {
+    .footer {justify-content: center;}
+} */
